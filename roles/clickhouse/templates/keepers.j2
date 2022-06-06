@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+{{ ansible_managed | comment('xml') }}
+<clickhouse>
+  <keeper_server>
+    <tcp_port>9181</tcp_port>
+    <server_id>{{clickhouse_server_id}}</server_id>
+    <log_storage_path>{{clickhouse_path_base}}/clickhouse/coordination/log</log_storage_path>
+    <snapshot_storage_path>{{clickhouse_path_base}}/clickhouse/coordination/snapshots</snapshot_storage_path>
+    <coordination_settings>
+      <operation_timeout_ms>10000</operation_timeout_ms>
+      <session_timeout_ms>30000</session_timeout_ms>
+      <raft_logs_level>trace</raft_logs_level>
+    </coordination_settings>
+    <raft_configuration>
+{% for keeper in clickhouse_cl_keepers %}
+      <server>
+        <id>{{loop.index}}</id>
+        <hostname>{{ keeper['host'] }}</hostname>
+        <port>{{ keeper['port'] | default(9234) }}</port>
+      </server>
+{% endfor %}
+    </raft_configuration>
+  </keeper_server>
+</clickhouse> 
