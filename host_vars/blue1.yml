@@ -1,0 +1,11 @@
+clickhouse_macros:
+  layer: 01
+  shard: "shard_1"
+  replica: "blue1"
+
+clickhouse_server_id: 1
+
+clickhouse_cl_keepers:
+  - { host: "blue1.xtl", port: 9234 }
+  - { host: "green1.xtl", port: 9234 }
+  - { host: "orange1.xtl", port: 9234 }

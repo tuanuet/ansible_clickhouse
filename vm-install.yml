@@ -1,0 +1,8 @@
+---       
+- hosts: backend
+  remote_user: root
+  become: true
+  roles:
+    - clickhouse
+  vars_files:
+    - vars/clickhouse.yml

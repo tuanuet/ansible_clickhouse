@@ -1,0 +1,8 @@
+[backend]
+blue1 ansible_host=192.168.56.10
+blue2 ansible_host=192.168.56.11
+green1 ansible_host=192.168.56.12
+green2 ansible_host=192.168.56.13
+orange1 ansible_host=192.168.56.14
+orange2 ansible_host=192.168.56.15
+

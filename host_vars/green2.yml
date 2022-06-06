@@ -1,0 +1,4 @@
+clickhouse_macros:
+  layer: 02
+  shard: "shard_2"
+  replica: "green2"

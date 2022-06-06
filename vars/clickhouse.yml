@@ -1,0 +1,19 @@
+clickhouse_clusters:
+  clicks_cluster:
+    shard_1:
+        - { host: "blue1.xtl", port: 9000 }
+        - { host: "blue2.xtl", port: 9000 }
+    shard_2:
+        - { host: "green1.xtl", port: 9000 }
+        - { host: "green2.xtl", port: 9000 }
+    shard_3:
+        - { host: "orange1.xtl", port: 9000 }
+        - { host: "orange2.xtl", port: 9000 }
+clickhouse_zookeeper_nodes:
+    - { host: "blue1.xtl", port: 9181 }
+    - { host: "green1.xtl", port: 9181 }
+    - { host: "orange1.xtl", port: 9181 }
+
+clickhouse_listen_host:
+    - "0.0.0.0"
+    # - "127.0.0.1"
