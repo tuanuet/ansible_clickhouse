@@ -14,6 +14,11 @@ clickhouse_zookeeper_nodes:
     - { host: "green1.xtl", port: 9181 }
     - { host: "orange1.xtl", port: 9181 }
 
+clickhouse_networks_default:
+    - "::/0"
+    - "::1"
+    - "127.0.0.1"
+
 clickhouse_listen_host:
     - "0.0.0.0"
     # - "127.0.0.1"
