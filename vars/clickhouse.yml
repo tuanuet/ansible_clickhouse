@@ -5,10 +5,10 @@ clickhouse_clusters:
         - { host: "blue2.xtl", port: 9000 }
     shard_2:
         - { host: "green1.xtl", port: 9000 }
-        - { host: "green2.xtl", port: 9000 }
+        # - { host: "green2.xtl", port: 9000 }
     shard_3:
         - { host: "orange1.xtl", port: 9000 }
-        - { host: "orange2.xtl", port: 9000 }
+        # - { host: "orange2.xtl", port: 9000 }
 clickhouse_zookeeper_nodes:
     - { host: "blue1.xtl", port: 9181 }
     - { host: "green1.xtl", port: 9181 }
@@ -17,3 +17,15 @@ clickhouse_zookeeper_nodes:
 clickhouse_listen_host:
     - "0.0.0.0"
     # - "127.0.0.1"
+
+clickhouse_users_custom:
+    - { name: "testuser",
+        password: "123",
+        networks: "{{ clickhouse_networks_default }}",
+        profile: "default",
+        quota: "default",
+        access_management: 1,
+        comment: "classic user with plain password"}
+
+clickhouse_dbs_custom:
+    - { name: "clickhouse_sql_query", cluster: "clicks_cluster" }
